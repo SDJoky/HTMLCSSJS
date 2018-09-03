@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html manifest="htmlTest.appcache">
+
+<head> 
+<meta charset="utf-8"> 
+<title> 这是一个html </title>
+
+</head>
+
+<body>
+<script> 
+document.write( "hello world") 
+</script>
+<br>
+<!-- 标签提供无法使用脚本时的替代内容 -->
+<noscript>抱歉，不支持noscript</noscript>
+
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+<input type="range" id="a" max="80" value="0">80 + <input type="number" id="b" value="50">
+= <output name="x" for="a b"></output>
+</form>
+<br>
+<form action="/example/html5/demo_form.asp" method="get">
+    用户名：<input type="text" name="usr_name" />
+    加密：<keygen name="security" />
+    <input type="submit" />
+</form>
+
+<style>
+        .box{
+        width: 100px;
+        height: 100px;
+        margin-left: 100px;
+        margin-top: 50px; 
+        margin-bottom: 50px;
+        background-color: red;
+        border: 30px dashed yellow;
+        outline: 30px dashed blue;
+        }
+</style>
+<div class="box"></div>
+
+
+<!-- 数据库操作 -->
+<script type="text/javascript">
+    var db = openDatabase('mytestdb','1.0','testDB','2 * 1024 * 1024');
+    var msg;
+    db.transaction(function (tx){
+        tx.executeSql('CREATE TABLE IF NOT EXISTS TEST (id unique, log)');
+        tx.executeSql('INSERT INTO TEST (id, log) VALUES (1, "数据1")');
+    })
+
+    db.transaction(function (tx){
+        tx.executeSql('INSERT INTO TEST (id, log) VALUES (2, "数据2")');
+        msg = '<p>数据表已创建，插入数据成功。</p>';
+        document.querySelector('#status').innerHTML = msg;
+    })
+
+    db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM TEST', [], function (tx, results) {
+               var len = results.rows.length, i;
+               msg = "<p>查询记录条数: " + len + "</p>";
+               document.querySelector('#status').innerHTML +=  msg;
+               for (i = 0; i < len; i++){
+                  msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
+                  document.querySelector('#status').innerHTML +=  msg;
+               }
+            }, null);
+            
+    })
+
+    // db.transaction(function (tx) {
+    //     tx.executeSql('DELETE FROM TEST  WHERE id=4');
+    //     msg = '<p>删除 id 为 4 的记录。</p>';
+    //     document.querySelector('#status').innerHTML =  msg;
+    // })
+</script>
+
+<div id="status" name="status">数据库增查状态</div>
+
+</body>
+
+</html>
