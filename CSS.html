@@ -7,24 +7,21 @@
 
 <style>
 /*  id 选择器 */
-#p1
-{
+#p1{
     text-align: center;
-    color: green;
+    color: royalblue;
     font-style: oblique;
     font-size: 40px;
 }
 
 /*  class选择器 */
-.center
-{
-    text-align: right;
+.center{
+    text-align: left;
     /* px/16=em */
     font-size: 2.5em;
 }
 /* 文本转换 */
-p.uppercase
-{
+p.uppercase{
     text-transform: uppercase;
     text-indent: 20px;
 }
@@ -34,22 +31,19 @@ a:visited {color:#00FF00;}  /* 已访问链接 */
 a:hover {color:#FF00FF;text-decoration: underline;}  /* 鼠标移动到链接上 */
 a:active {color:#0000FF;}  /* 鼠标点击时 */
 
-ul.b
-{
+ul.b{
     list-style-type: square;
     /* list-style: square url("sqpurple.gif"); */
 }
 ol.c {list-style: lower-alpha;}
 
-table
-{
+table{
     /* 边框折叠 */
     border-collapse: collapse;
     width: 300px;
 }
 
-table,th,td
-{
+table,th,td{
     border: 1px solid black;
     height: 40px;
     text-align: center;
@@ -69,15 +63,67 @@ table,th,td
         outline: 30px groove blue;
      }
 
+p > i:first-child{
+    color: red;
+}
+/* p:first-letter{
+    color: pink;
+} */
+
+h1:after{
+    content:url(1.png);
+}
+
+/*  lang 伪类:有能力为不同的语言定义特殊的规则  */
+q:lang(no){
+    quotes: "#~" "~#";
+}
+
+.navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    margin-bottom: 10px;
+ }
+li a{
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+li a:hover{
+    background-color: #555555;
+    color: white;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9ff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgb(0,0,0,0.4);
+    padding: 13px 17px;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
 </style>
 </head>
 
 <body>
+    <h1>hi,最近好么？</h1>
     <p id="p1"> hello css </p>
-    <p class="center"> 未有id标志有class标志的css段 </p>
+    <p class="center"> 未有id标志有<i>class</i>标志的css段 </p>
     <p class="uppercase">this is a project.he told me, 
-        'just remember that all the people in this world haven't 
-        had the advantages that you've had.' </p>
+        'just <i>remember</i>  that all <q lang="no">the people in this world</q>  haven't 
+        had the advantages <i>that</i> you've had.' </p>
     <p><b> <a>这是链接</a></b></p>
 <!-- 无序 -->
     <ul class="b">
@@ -104,6 +150,23 @@ table,th,td
     </table>
 
     <div class="box"></div>
+
+<p>这是一个常见导航栏</p>
+<ul class="navbar">
+    <li><a href="#home">主页</a></li>
+    <li><a href="#news">新闻</a></li>
+    <li><a href="#contact">联系</a></li>
+    <li style="float:right"><a href="#about">关于</a></li>
+</ul>
+
+<!-- 下拉菜单 -->
+<div class="dropdown">
+<span>这里是下拉菜单</span>
+<div class="dropdown-content"> 
+    <p>菜单1</p>
+    <p>菜单2</p>
+</div>
+</div>
 
 </body>
 
