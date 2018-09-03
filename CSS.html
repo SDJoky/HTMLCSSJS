@@ -40,6 +40,35 @@ ul.b
     /* list-style: square url("sqpurple.gif"); */
 }
 ol.c {list-style: lower-alpha;}
+
+table
+{
+    /* 边框折叠 */
+    border-collapse: collapse;
+    width: 300px;
+}
+
+table,th,td
+{
+    border: 1px solid black;
+    height: 40px;
+    text-align: center;
+    vertical-align: bottom;
+    background-color: yellow;
+}
+
+
+.box{
+        width: 100px;
+        height: 100px;
+        margin-left: 100px;
+        margin-top: 50px; 
+        margin-bottom: 50px;
+        background-color: red;
+        border: 30px dashed yellow;
+        outline: 30px groove blue;
+     }
+
 </style>
 </head>
 
@@ -60,6 +89,22 @@ ol.c {list-style: lower-alpha;}
          <li>first</li>
          <li>second</li>
     </ol>
+
+    <table>
+        <tr>
+         <th>firstName</th>
+         <th>secondName</th>
+        </tr>
+         <th>A</th>
+         <TH>B</TH>
+        <tr>
+
+        </tr>
+
+    </table>
+
+    <div class="box"></div>
+
 </body>
 
 </html>
