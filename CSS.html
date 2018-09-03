@@ -11,20 +11,55 @@
 {
     text-align: center;
     color: green;
+    font-style: oblique;
+    font-size: 40px;
 }
 
 /*  class选择器 */
 .center
 {
     text-align: right;
+    /* px/16=em */
+    font-size: 2.5em;
+}
+/* 文本转换 */
+p.uppercase
+{
+    text-transform: uppercase;
+    text-indent: 20px;
 }
 
+a:link {color:#000000;}      /* 未访问链接*/
+a:visited {color:#00FF00;}  /* 已访问链接 */
+a:hover {color:#FF00FF;text-decoration: underline;}  /* 鼠标移动到链接上 */
+a:active {color:#0000FF;}  /* 鼠标点击时 */
+
+ul.b
+{
+    list-style-type: square;
+    /* list-style: square url("sqpurple.gif"); */
+}
+ol.c {list-style: lower-alpha;}
 </style>
 </head>
 
 <body>
     <p id="p1"> hello css </p>
     <p class="center"> 未有id标志有class标志的css段 </p>
+    <p class="uppercase">this is a project.he told me, 
+        'just remember that all the people in this world haven't 
+        had the advantages that you've had.' </p>
+    <p><b> <a>这是链接</a></b></p>
+<!-- 无序 -->
+    <ul class="b">
+            <li>first</li>
+            <li>second</li>
+    </ul>
+<!-- 有序 -->
+    <ol class="c">
+         <li>first</li>
+         <li>second</li>
+    </ol>
 </body>
 
 </html>
