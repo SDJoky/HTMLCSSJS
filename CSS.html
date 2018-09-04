@@ -27,6 +27,34 @@ p.uppercase{
     text-indent: 20px;
 }
 
+.box{
+        position: relative;
+        margin-bottom: 10px;
+        margin-left: 50px;
+        margin-top: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 30px dashed yellow;
+        outline: 30px groove blue;
+        animation: myfirst 5s;
+        -webkit-animation: myfirst 5s;
+}
+@keyframes myfirst{
+    0% {background: red; left: 0px; top: 0px;}
+    25% {background: purple; left: 200px; top: 0px;}
+    50% {background: blue; left: 200px; top: 100px;}
+    75% {background: pink; left: 50px; top: 100px;}
+    100% {background: red; left: 0px; top: 0px;}
+}
+@-webkit-keyframes myfirst{
+    0% {background: red; left: 0px; top: 0px;}
+    25% {background: purple; left: 200px; top: 0px;}
+    50% {background: blue; left: 200px; top: 100px;}
+    75% {background: pink; left: 50px; top: 100px;}
+    100% {background: red; left: 0px; top: 0px;}
+}
+
 a:link {color:#000000;}      /* 未访问链接*/
 a:visited {color:#00FF00;}  /* 已访问链接 */
 a:hover {color:#FF00FF;text-decoration: underline;}  /* 鼠标移动到链接上 */
@@ -52,18 +80,6 @@ table,th,td{
     background-color: yellow;
 }
 
-
-.box{
-        width: 100px;
-        height: 100px;
-        margin-left: 100px;
-        margin-top: 50px; 
-        margin-bottom: 50px;
-        background-color: red;
-        border: 30px dashed yellow;
-        outline: 30px groove blue;
-        box-shadow: 10px 10px 5px #888888;
-     }
 
 p > i:first-child{
     color: red;
@@ -104,6 +120,7 @@ li a:hover{
 .dropdown{
     position: relative;
     display: inline-block;
+    margin-bottom: 10px;
 }
 .dropdown-content{
     display: none;
@@ -118,16 +135,29 @@ li a:hover{
 }
 
 #grad1{
-    height: 100px;
+    width: 200px;
+    height: 50px;
+    transition: width 2s,height 2s,transform 2s;
+    -webkit-transition: width 2s,height 2s,-webkit-transform 2s;
+
     background: -webkit-linear-gradient(left top,red,yellow);
     background: -o-linear-gradient(bottom right,red, pink); /* Opera 11.1 - 12.0 */
     background: -moz-linear-gradient(bottom right,red, pink); /* Firefox 3.6 - 15 */
     background: linear-gradient(to bottom right,red, yellow);
+    text-align: center;
+}
+
+#grad1:hover{
+    width: 400px;
+    height: 200px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 </style>
 </head>
 
 <body>
+    <div class="box"></div>
     <h1>hi,最近好么？</h1>
     <p id="p1"> hello css </p>
     <p class="center"> 未有id标志有<i>class</i>标志的css段 </p>
@@ -159,8 +189,6 @@ li a:hover{
 
     </table>
 
-    <div class="box"></div>
-
 <p>这是一个常见导航栏</p>
 <ul class="navbar">
     <li><a href="#home">主页</a></li>
@@ -178,7 +206,9 @@ li a:hover{
 </div>
 </div>
 
-<div id="grad1"></div>
+<div id="grad1">
+    鼠标移动看过渡效果
+</div>
 
 </body>
 
