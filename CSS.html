@@ -1,0 +1,298 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>css</title>
+
+<style>
+.navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    margin-bottom: 10px;
+ }
+li a{
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+li a:hover{
+    background-color: #555555;
+    color: white;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9ff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgb(0,0,0,0.4);
+    padding: 13px 17px;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+/*  id 选择器 */
+#p1{
+    text-align: center;
+    color: royalblue;
+    font-style: oblique;
+    font-size: 40px;
+    text-shadow: 6px 6px 6px #ff00ff;
+    margin-top: 100px;
+}
+
+.container {
+    position: relative;
+}
+.bottomright {
+    position: absolute;
+    bottom: 50px;
+    right: 16px;
+    font-size: 18px;
+    color: blue;
+}
+img { 
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+    border-radius: 50px;
+}
+
+/*  class选择器 */
+.center{
+    text-align: left;
+    /* px/16=em */
+    font-size: 2.5em;
+}
+/* 文本转换 */
+p.uppercase{
+    text-transform: uppercase;
+    text-indent: 20px;
+}
+
+.box{
+        position: relative;
+        margin-bottom: 10px;
+        margin-left: 50px;
+        margin-top: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 30px dashed yellow;
+        outline: 30px groove blue;
+
+        animation: myfirst 5s linear 2s infinite alternate;
+        -moz-animation: myfirst 5s linear 2s infinite alternate; 
+        -webkit-animation: myfirst 5s linear 2s infinite alternate;
+        -o-animation:myfirst 5s linear 2s infinite alternate;
+}
+
+@keyframes myfirst{
+    0% {background: red; left: 0px; top: 0px;}
+    25% {background: purple; left: 400px; top: 0px;}
+    50% {background: blue; left: 400px; top: 50px;}
+    75% {background: pink; left: 0px; top: 50px;}
+    100% {background: red; left: 0px; top: 0px;}
+}
+@-moz-keyframes myfirst{
+    0% {background: red; left: 0px; top: 0px;}
+    25% {background: purple; left: 400px; top: 0px;}
+    50% {background: blue; left: 400px; top: 50px;}
+    75% {background: pink; left: 0px; top: 50px;}
+    100% {background: red; left: 0px; top: 0px;}
+}
+@-webkit-keyframes myfirst{
+    0% {background: red; left: 0px; top: 0px;}
+    25% {background: purple; left: 400px; top: 0px;}
+    50% {background: blue; left: 400px; top: 50px;}
+    75% {background: pink; left: 0px; top: 50px;}
+    100% {background: red; left: 0px; top: 0px;}
+}
+@-o-keyframes myfirst{
+    0% {background: red; left: 0px; top: 0px;}
+    25% {background: purple; left: 400px; top: 0px;}
+    50% {background: blue; left: 400px; top: 50px;}
+    75% {background: pink; left: 0px; top: 50px;}
+    100% {background: red; left: 0px; top: 0px;}
+}
+
+a:link {color:#000000;}      /* 未访问链接*/
+a:visited {color:#00FF00;}  /* 已访问链接 */
+a:hover {color:#FF00FF;text-decoration: underline;}  /* 鼠标移动到链接上 */
+a:active {color:#0000FF;}  /* 鼠标点击时 */
+
+ul.b{
+    list-style-type: square;
+    /* list-style: square url("sqpurple.gif"); */
+}
+ol.c {list-style: lower-alpha;}
+
+table{
+    /* 边框折叠 */
+    border-collapse: collapse;
+    width: 300px;
+}
+
+table,th,td{
+    border: 1px solid black;
+    height: 40px;
+    text-align: center;
+    vertical-align: bottom;
+    background-color: yellow;
+}
+
+p > i:first-child{
+    color: red;
+}
+/* p:first-letter{
+    color: pink;
+} */
+
+/*  lang 伪类:有能力为不同的语言定义特殊的规则  */
+q:lang(no){
+    quotes: "#~" "~#";
+}
+
+/* 渐变及动画  */
+#grad1{
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+    transition: width 2s,height 2s,transform 2s;
+    -webkit-transition: width 2s,height 2s,-webkit-transform 2s;
+
+    background: -webkit-linear-gradient(left top,red,yellow);
+    background: -o-linear-gradient(bottom right,red, pink); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom right,red, pink); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom right,red, yellow);
+    text-align: center;
+}
+#grad1:hover{
+    width: 400px;
+    height: 200px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/* 多列展示 */
+.morecolumn{
+    column-count: 3;
+    column-gap: 20px;
+    column-rule-style: dotted;
+
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -moz-column-rule-style: dotted;
+
+    -webkit-column-count: 3;
+    -webkit-column-gap: 20px;
+    -webkit-column-rule-style: dotted;
+}
+
+/* 随屏幕而变化 */
+.mainscreen{overflow: auto;}
+#main{margin-left: 4px;}
+#leftbar{float: none; width: auto;}
+#list{margin: 0;padding: 0;}
+.menuitem{
+    background:yellow;
+    border: 1px solid blue;
+    border-radius: 4px;
+    margin: 4px;
+    padding: 2px;
+}
+@media screen and (min-width:600px){
+    #leftbar {width: 200px;float: left;}
+    #main {margin-left: 216px};
+}
+</style>
+</head>
+
+<body>
+    <p>这是一个常见导航栏</p>
+    <ul class="navbar">
+        <li><a href="#home">主页</a></li>
+        <li><a href="#news">新闻</a></li>
+        <li><a href="#contact">联系</a></li>
+        <li style="float:right"><a href="#about">关于</a></li>
+    </ul>
+    
+    <!-- 下拉菜单 -->
+    <div class="dropdown">
+    <span>这里是下拉菜单</span>
+    <div class="dropdown-content"> 
+        <p>菜单1</p>
+        <p>菜单2</p>
+    </div>
+    </div>
+
+    <div class="container">
+            <img src="http://img.zcool.cn/community/0117e2571b8b246ac72538120dd8a4.jpg@1280w_1l_2o_100sh.jpg" alt="Norway" >
+            <div class="bottomright">hi,最近好么？</div>
+    </div>
+
+    <div class="box"></div>
+    <p id="p1"> hello css </p>
+    <p class="center"> 未有id标志有<i>class</i>标志的css段 </p>
+    <p class="uppercase">this is a project.he told me, 
+        'just <i>remember</i>  that all <q lang="no">the people in this world</q>  haven't 
+        had the advantages <i>that</i> you've had.' </p>
+    <p><b> <a>这是链接</a></b></p>
+<!-- 无序 -->
+    <ul class="b">
+            <li>first</li>
+            <li>second</li>
+    </ul>
+<!-- 有序 -->
+    <ol class="c">
+         <li>first</li>
+         <li>second</li>
+    </ol>
+<!-- table -->
+    <table>
+        <tr>
+         <th>firstName</th>
+         <th>secondName</th>
+        </tr>
+         <th>A</th>
+         <TH>B</TH>
+        <tr>
+
+        </tr>
+
+    </table>
+
+<div id="grad1">
+    鼠标移动看过渡效果
+</div>
+
+
+<div class="morecolumn">唐诗的形式是多种多样的。唐代的古体诗，主要有五言和七言两种。近体诗也有两种，一种叫做绝句，一种叫做律诗。绝句和律诗又各有五言和七言之不同。所以唐诗的基本形式基本上有这样六种：五言古体诗，七言古体诗，五言绝句，七言绝句，五言律诗，七言律诗。古体诗对音韵格律的要求比较宽：一首之中，句数可多可少，篇章可长可短，韵脚可以转换。近体诗对音韵格律的要求比较严：一首诗的句数有限定，即绝句四句，律诗八句，每句诗中用字的平仄声，有一定的规律，韵脚不能转换；律诗还要求中间四句成为对仗。古体诗的风
+    格是前代流传下来的，所以又叫古风。近体诗有严整的格律，所以有人又称它为格律诗。</div>
+
+<!-- 多媒体查询:根据窗口变化改变位置 -->
+<div class="mainscreen">
+    <div id="leftbar">
+        <ul id="list">
+            <li class="menuitem">menu1</li>
+            <li class="menuitem">menu2</li>
+            <li class="menuitem">menu3</li>
+        </ul>
+    </div>
+    <div id="main">
+        <h1>根据窗口变化改变位置</h1>
+    </div>
+</div>
+</body>
+</html>
