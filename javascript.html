@@ -6,26 +6,32 @@
 </head>
 
 <body>
-    
+
     <script>
         alert("hello,欢迎访问哦~");
-        document.write(Date());
-
+        document.write(Date() + "<br>");
         var i;
         var cars = new Array();
         cars[0] = 'ary1';
         cars[1] = 'ary2';
         cars[2] = 'ary3';
-
         for (let i = 0; i < cars.length; i++) {
-            document.write("<br>" + cars[i]);
+            document.write("数组元素" +cars[i] + "<br>");
         }
+        var person = {
+            firstName:"Lee",
+            lastName:"Joky",
+            age:25
+        }
+       
+        document.write('对象' + person.lastName + ' ' + person.firstName + ' is ' + person.age + ' years old.');
     </script>
-    
+
     <h1 id="paragraph"> 段落1 </h1>
     <div id="myDiv">div1：点按钮调用外部js函数</div>
     <button type="button" onclick="clickFunction()">点按钮吧</button>
     <script src="funtion.js"></script>
+    
 
 </body>
 </html>
