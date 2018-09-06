@@ -25,13 +25,25 @@
         }
        
         document.write('对象' + person.lastName + ' ' + person.firstName + ' is ' + person.age + ' years old.');
+
+        // 自己调用自己的函数
+        (function () {
+            console.log("这是一个自己调用自己的函数");
+        })();
     </script>
 
     <h1 id="paragraph"> 段落1 </h1>
     <div id="myDiv">div1：点按钮调用外部js函数</div>
-    <button type="button" onclick="clickFunction()">点按钮吧</button>
-    <script src="funtion.js"></script>
+    <button type="button" onclick="clickFunction()">点我这个按钮</button>
     
+    <!-- 使用 JavaScript 代码来添加 HTML 元素 -->
+    <button onclick="this.innerHTML=Date()">点击获取当前时间</button>
+    <p></p>
+    年龄：<input id = 'age' value="17">
+    <button onclick="ageIsPermit()">进入年龄判断</button>
+    <button onclick="rexg()">正则判断</button>
+    <h5 id="result">---</h5>
+    <script src="funtion.js"></script>
 
 </body>
 </html>
