@@ -6,11 +6,24 @@
 </head>
 
 <body>
-    
     <script>
-        document.write("<h1>标题1</h1>");
+        alert("hello,欢迎访问哦~");
+        document.write(Date());
+
+        var i;
+        var cars = new Array();
+        cars[0] = 'ary1';
+        cars[1] = 'ary2';
+        cars[2] = 'ary3';
+
+        for (let i = 0; i < cars.length; i++) {
+            document.write("<br>" + cars[i]);
+        }
     </script>
-    <button type="button" onclick="clickFunction()">按钮</button>
+    
+    <h1 id="paragraph"> 段落1 </h1>
+    <div id="myDiv">div1：点按钮调用外部js函数</div>
+    <button type="button" onclick="clickFunction()">点按钮吧</button>
     <script src="funtion.js"></script>
 
 </body>
