@@ -30,6 +30,19 @@
         (function () {
             console.log("这是一个自己调用自己的函数");
         })();
+
+        // 使用匿名函数的方式不存在函数提升，因为函数名称使用变量表示的，只存在变量提升
+        function getName()
+        {
+            console.log(1);
+        }
+        var getName;
+
+        getName = function(){
+            console.log(2);
+        }
+        getName();
+
     </script>
 
     <h1 id="paragraph"> 段落1 </h1>
