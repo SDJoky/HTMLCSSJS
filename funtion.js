@@ -28,16 +28,17 @@ function rexg()
     } 
 }
 
+// 表单验证
 function myButtonInform()
 {
-    var x,text;
-    x = document.getElementById("inform").value;
-    if(isNaN(x) || x<10 || x>100)
+    var x = document.getElementById("inform").value;
+    var atpos = x.indexOf('@');
+    var dotpos = x.lastIndexOf('.');
+    if(atpos<1 || dotpos<atpos+2 || dotpos + 2 >= x.length)
     {
-        text = "输入错误了哦";
+        document.getElementById("resultTxt").innerHTML = '不是有效地址';
     }else
     {
-        text = "适合范围";
+        document.getElementById("resultTxt").innerHTML = '地址正确';
     }
-    document.getElementById("resultTxt").innerHTML = text;
 }
