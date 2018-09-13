@@ -27,3 +27,17 @@ function rexg()
         document.getElementById('result').innerHTML = '请先获取结果';
     } 
 }
+
+function myButtonInform()
+{
+    var x,text;
+    x = document.getElementById("inform").value;
+    if(isNaN(x) || x<10 || x>100)
+    {
+        text = "输入错误了哦";
+    }else
+    {
+        text = "适合范围";
+    }
+    document.getElementById("resultTxt").innerHTML = text;
+}
