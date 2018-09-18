@@ -28,7 +28,7 @@ function rexg()
     } 
 }
 
-// 表单验证
+// 表单email验证
 function myButtonInform()
 {
     var x = document.getElementById("inform").value;
