@@ -8,7 +8,7 @@
 <body>
 
     <script>
-        alert("hello,欢迎访问哦~");
+        alert("hello,欢迎访问哦，js的语言实例");
         document.write(Date() + "<br>");
         var i;
         var cars = new Array();
@@ -16,12 +16,12 @@
         cars[1] = 'ary2';
         cars[2] = 'ary3';
         for (let i = 0; i < cars.length; i++) {
-            document.write("数组元素" +cars[i] + "<br>");
+            document.write("for in 的数组元素" +cars[i] + "<br>");
         }
         var person = {
             firstName:"Lee",
             lastName:"Joky",
-            age:25
+            age:26
         }
        
         document.write('对象' + person.lastName + ' ' + person.firstName + ' is ' + person.age + ' years old.');
@@ -57,7 +57,7 @@
     <button onclick="rexg()">正则判断</button>
     <h5 id="result">---</h5>
     <!-- 表单email验证 -->
-    <p>请输入Email地址</p>
+    <p>表单email的验证：请输入Email地址</p>
     <input id="inform">
     <button type="buttom" onclick="myButtonInform()"> 提交</button>
     <p id="resultTxt"></p>
